@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ozone</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+</head>
+<body>
+    <div>
+        <div class="header">
+            <p>داده‌های ازون ایستگاه موسسه ژئوفیزیک دانشگاه تهران</p>
+            <img src="{% static 'images/Logo-Geophysics.png' %}" alt="UT logo" class="ut-logo">
+        </div>
+        
+        <div class="header-line">
+            <hr size="2" color="gray" noshade>
+        </div>
+    </div>
+
+
+    <canvas id="ozonChart" width="700" height="200"></canvas>
+
+
+
+    <script>
+        const datetime = [
+            {% for item in data.data %}
+                "{{ item.datetime}}"{% if not forloop.last %},{% endif %}
+            {% endfor %}] 
+            console.log(datetime)
+
+        const year = "{{ data.year }}";
+        console.log(year);
+
+        const ozon = [
+            {% for item in data.data %}
+                "{{ item.oz}}"{% if not forloop.last %},{% endif %}
+            {% endfor %}] 
+            console.log(ozon)
+    </script>
+    <script src="{% static 'chartjs/chart.js' %}"></script>
+    <script src="{% static 'chartjs/ozonchart.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

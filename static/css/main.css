@@ -1,0 +1,37 @@
+@font-face {
+	font-family: 'Yekan';
+	src:	url('/static/fonts/Yekan-Font-master/Yekan.eot'); /* IE9 Compat Modes */
+	src:	url('/static/fonts/Yekan-Font-master/Yekan.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+			url('/static/fonts/Yekan-Font-master/Yekan.woff2') format('woff2'), /* Modern Browsers */
+			url('/static//fonts/Yekan-Font-master/Yekan.woff') format('woff'), /* Modern Browsers */
+			url('/static/fonts/Yekan-Font-master/Yekan.otf') format('opentype'), /* Open Type Font */	
+			url('/static/fonts/Yekan-Font-master/Yekan.ttf') format('truetype'); /* Safari, Android, iOS */
+	font-weight: normal;
+	font-style: normal;
+	text-rendering: optimizeLegibility;
+	font-display: auto;
+}
+
+.ut-logo{
+    width: 100px;
+    height: auto;
+    margin-right: 50px;
+}
+
+.header-line hr{
+    width: 95%;
+    margin: auto;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* gap: 30px; */
+    padding: 0 40px;
+}
+.header p{
+    font-size: 30px;
+    color: rgb(102, 101, 101);
+    font-family: 'Yekan';
+}
