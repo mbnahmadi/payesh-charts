@@ -1,8 +1,10 @@
 import pandas as pd
 
 def read_ozon(file):
-    df = pd.read_csv(file, skiprows=25, nrows=30)
-    selected_columns = df.iloc[:, [0, 3]]
+    df = pd.read_excel(file, skiprows=5, header=0, usecols="C,D")
+    selected_columns = df.iloc[:]
+    print(selected_columns)
+    # selected_columns = df.iloc[2,3]
     selected_columns.iloc[:, 0] = pd.to_datetime(selected_columns.iloc[:, 0])
     year = selected_columns.iloc[0, 0].year
     data = [
